@@ -7,5 +7,11 @@ function Airport(id, capacity){
     return this._hanger;
   };
 
+  Airport.prototype.isFull = function () {
+    return (this._hanger.length >= this._capacity);
+  };
 
+  Airport.prototype.land = function (plane) {
+    this._hanger.push(plane);
+  };
 };
