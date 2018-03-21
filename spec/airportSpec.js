@@ -55,4 +55,22 @@ describe("Airport", function() {
   });
 
 
+/////////       //////////
+
+
+
+  // it('adds plane to the hanger', function(){
+  //   airport.takeOff(plane, sunny.isWeatherStormy());
+  //     expect(airport.get()).toEqual(jasmine.arrayContaining([plane]));
+  // });
+
+
+  it('throws an error if plane is not at the airport', function(){
+    expect(function(){myBackGarden.takeOff(plane, sunny.isWeatherStormy())}).toThrowError('Error! Plane not at this airport!');
+  });
+
+  it('throw an error if weather is stormy', function(){
+    expect(function(){airport.takeOff(plane, stormy.isWeatherStormy())}).toThrowError('It is too stormy to take off!')
+  });
+
 });

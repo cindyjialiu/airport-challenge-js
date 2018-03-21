@@ -25,4 +25,17 @@ function Airport(id, capacity){
       this._hanger.push(plane);
   };
 
+
+  Airport.prototype.takeOff = function (plane, stormy) {
+      if(plane._airportId != this._id )
+        throw new Error("Error! Plane not at this airport!");
+
+      if(stormy)
+        throw new Error("It is too stormy to take off!");
+
+      plane._airportId = null;
+      this._hanger.pop(plane);
+  };
+
+
 };
