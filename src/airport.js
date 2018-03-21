@@ -11,7 +11,18 @@ function Airport(id, capacity){
     return (this._hanger.length >= this._capacity);
   };
 
-  Airport.prototype.land = function (plane) {
-    this._hanger.push(plane);
+  Airport.prototype.land = function (plane, stormy) {
+      if(plane._airportId != null )
+        throw new Error("Plane is landed already!");
+
+      if(this.isFull())
+        throw new Error("Airport is full");
+
+      if(stormy)
+        throw new Error("It is too stormy to land!");
+
+      plane._airportId = this._id;
+      this._hanger.push(plane);
   };
+
 };
