@@ -1,5 +1,6 @@
 describe("Airport", function() {
-  var airport = new Airport('Heathrow', 10);
+  var airport = new Airport('Heathrow');
+  var myBackGarden = new Airport("Garden", 1)
 
   it ("returns empty airport", function(){
     expect(airport.get()).toEqual([]);
@@ -9,9 +10,14 @@ describe("Airport", function() {
     expect(airport._id).toEqual('Heathrow');
   });
 
-  it ('checks airport sets capacity 10', function() {
-    expect(airport._capacity).toEqual(10);
+  it ('checks airport sets capacity to default of 30', function() {
+    expect(airport._capacity).toEqual(30);
   });
+
+  it ('checks airport sets capacity to 1', function() {
+    expect(myBackGarden._capacity).toEqual(1);
+  });
+
 
 
 });
